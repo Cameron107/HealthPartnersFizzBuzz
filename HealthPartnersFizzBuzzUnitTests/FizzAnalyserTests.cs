@@ -6,16 +6,14 @@ namespace HealthPartnersFizzBuzzUnitTests
     [TestClass]
     public class FizzAnalyserTests
     {
-
-        FizzAnalyser _fizzAnalyser;
-
         [TestMethod]
         public void FizzAnalyser_Returns_NumberAsAString()
         {
-            var output = new FizzAnalyser().Analyse(3);
-            Assert.AreEqual("3", output);
+            var output = new FizzAnalyser().Analyse(4);
+            Assert.AreEqual("4", output);
         }
 
+        [TestMethod]
         public void FizzAnalyser_Divisor_is_three()
         {
             var output = new FizzAnalyser();
