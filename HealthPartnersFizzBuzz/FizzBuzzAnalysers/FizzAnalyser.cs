@@ -10,9 +10,9 @@ namespace HealthPartnersFizzBuzz.FizzBuzzAnalyzers
     {
         public int Divisor { get { return 0; } }
 
-        public int Analyse(int number)
+        public string Analyse(int number)
         {
-            return 0;
+            return number.ToString();
         }
     }
 }

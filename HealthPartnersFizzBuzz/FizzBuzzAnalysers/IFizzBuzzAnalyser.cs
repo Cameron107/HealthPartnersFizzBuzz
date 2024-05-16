@@ -9,6 +9,6 @@ namespace HealthPartnersFizzBuzz.FizzBuzzAnalyzers
     internal interface IFizzBuzzAnalyser
     {
         int Divisor { get; }
-        int Analyse(int number);
+        string Analyse(int number);
     }
 }

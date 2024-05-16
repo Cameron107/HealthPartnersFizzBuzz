@@ -10,10 +10,10 @@ namespace HealthPartnersFizzBuzzUnitTests
         FizzAnalyser _fizzAnalyser;
 
         [TestMethod]
-        public void FizzAnalyser_Returns_String()
+        public void FizzAnalyser_Returns_NumberAsAString()
         {
-            var output = _fizzAnalyser.Analyse(3);
-            Assert.IsInstanceOfType(output, typeof(string));
+            var output = new FizzAnalyser().Analyse(3);
+            Assert.AreEqual("3", output);
         }
     }
 }
