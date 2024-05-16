@@ -13,7 +13,7 @@ namespace HealthPartnersFizzBuzz
             List<int> FizzBuzzRange = new List<int>();
             List<string> FizzBuzzOutput = new List<string>();
 
-            for (int i = 1; i <= 10; i++)
+            for (int i = 1; i <= 100; i++)
             {
                 FizzBuzzRange.Add(i);
             }
