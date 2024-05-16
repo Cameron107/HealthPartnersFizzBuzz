@@ -23,8 +23,11 @@ namespace HealthPartnersFizzBuzz
             {
                 foreach(IFizzBuzzAnalyser analyser in AnalysersList)
                 {
-                    var analysis = analyser.Analyse(number);
-                    FizzBuzzOutput.Add(analysis);
+                    if(number % analyser.Divisor == 0)
+                    {
+                        var analysis = analyser.Analyse(number);
+                        FizzBuzzOutput.Add(analysis);
+                    }
                 }
             }
 
