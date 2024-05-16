@@ -19,5 +19,11 @@ namespace HealthPartnersFizzBuzzUnitTests
             var output = new FizzAnalyser();
             Assert.AreEqual(3, output.Divisor);
         }
+        [TestMethod]
+        public void FizzAnalyser_Produces_Fizz_WhenGivenMultipleOfThree()
+        {
+            var output = new FizzAnalyser().Analyse(3);
+            Assert.AreEqual("Fizz", output);
+        }
     }
 }

@@ -27,6 +27,7 @@ namespace HealthPartnersFizzBuzz
                     {
                         var analysis = analyser.Analyse(number);
                         FizzBuzzOutput.Add(analysis);
+                        break;
                     }
                 }
             }
@@ -43,7 +44,7 @@ namespace HealthPartnersFizzBuzz
                     .Where(y => type.IsAssignableFrom(y) && !y.IsInterface).Select(x => Activator.CreateInstance(x))
                     .Cast<IFizzBuzzAnalyser>();
 
-                return Interfacetypes.ToList();
+                return Interfacetypes.OrderByDescending(x => x.Divisor).ToList();
             }
         }
     }

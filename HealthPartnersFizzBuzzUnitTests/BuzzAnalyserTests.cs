@@ -20,5 +20,12 @@ namespace HealthPartnersFizzBuzzUnitTests
             var output = new BuzzAnalyser();
             Assert.AreEqual(5, output.Divisor);
         }
+
+        [TestMethod]
+        public void BuzzAnalyser_Produces_Buzz_WhenGivenMultipleOfFive()
+        {
+            var output = new BuzzAnalyser().Analyse(5);
+            Assert.AreEqual("Buzz", output);
+        }
     }
 }

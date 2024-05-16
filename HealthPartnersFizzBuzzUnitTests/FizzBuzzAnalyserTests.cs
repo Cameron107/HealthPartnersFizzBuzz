@@ -20,5 +20,11 @@ namespace HealthPartnersFizzBuzzUnitTests
             var output = new FizzBuzzAnalyser();
             Assert.AreEqual(15, output.Divisor);
         }
+        [TestMethod]
+        public void FizzBuzzAnalyser_Produces_FizzBuzz_WhenGivenMultipleOfFifteen()
+        {
+            var output = new FizzBuzzAnalyser().Analyse(15);
+            Assert.AreEqual("FizzBuzz", output);
+        }
     }
 }
