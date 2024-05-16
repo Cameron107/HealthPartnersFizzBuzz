@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HealthPartnersFizzBuzz.FizzBuzzAnalyzers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,9 +19,29 @@ namespace HealthPartnersFizzBuzz
                 FizzBuzzRange.Add(i);
             }
 
-            FizzBuzzOutput = FizzBuzzRange.ConvertAll(x => x.ToString());
+            foreach(int number in FizzBuzzRange)
+            {
+                foreach(IFizzBuzzAnalyser analyser in AnalysersList)
+                {
+                    var analysis = analyser.Analyse(number);
+                    FizzBuzzOutput.Add(analysis);
+                }
+            }
 
             return FizzBuzzOutput;
+        }
+
+        List<IFizzBuzzAnalyser> AnalysersList
+        {
+            get
+            {
+                var type = typeof(IFizzBuzzAnalyser);
+                var Interfacetypes = AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes())
+                    .Where(y => type.IsAssignableFrom(y) && !y.IsInterface).Select(x => Activator.CreateInstance(x))
+                    .Cast<IFizzBuzzAnalyser>();
+
+                return Interfacetypes.ToList();
+            }
         }
     }
 }
