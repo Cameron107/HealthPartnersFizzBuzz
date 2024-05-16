@@ -12,6 +12,11 @@ namespace HealthPartnersFizzBuzz.FizzBuzzAnalyzers
 
         public string Analyse(int number)
         {
+            if(number % Divisor == 0)
+            {
+                return "Fizz";
+            }
+
             return number.ToString();
         }
     }
