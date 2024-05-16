@@ -19,5 +19,12 @@ namespace HealthPartnersFizzBuzzUnitTests
             var output = _fizzBuzzInitializer.RunFizzBuzz();
             Assert.AreNotEqual(0, output.Count);
         }
+
+        [TestMethod]
+        public void RunFizzBuzz_Returns_ListOfStrings()
+        {
+            var output = _fizzBuzzInitializer.RunFizzBuzz();
+            Assert.IsInstanceOfType(output, typeof(List<string>));
+        }
     }
 }
