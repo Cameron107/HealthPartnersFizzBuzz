@@ -8,9 +8,16 @@ namespace HealthPartnersFizzBuzz
 {
     public class FizzBuzzInitializer
     {
-        public List<string> RunFizzBuzz()
+        public List<int> RunFizzBuzz()
         {
-            return null;
+            List<int> FizzBuzzRange = new List<int>();
+
+            for (int i = 1; i <= 10; i++)
+            {
+                FizzBuzzRange.Add(i);
+            }
+
+            return FizzBuzzRange;
         }
     }
 }
