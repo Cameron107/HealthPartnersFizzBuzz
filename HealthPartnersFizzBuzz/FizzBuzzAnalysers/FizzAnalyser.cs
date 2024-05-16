@@ -8,7 +8,7 @@ namespace HealthPartnersFizzBuzz.FizzBuzzAnalyzers
 {
     public class FizzAnalyser : IFizzBuzzAnalyser
     {
-        public int Divisor { get { return 0; } }
+        public int Divisor { get { return 3; } }
 
         public string Analyse(int number)
         {
